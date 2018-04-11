@@ -1,0 +1,32 @@
+<h2><b>Create Parking</b></h2>
+<div class="generate-parking">
+    <div>
+        <input required name="total"    type="number" placeholder="Total"      [(ngModel)]="total" [ngModelOptions]="{standalone: true}" />
+        <input          name="disabled" type="number" placeholder="Disabled" [(ngModel)]="disabled"  [ngModelOptions]="{standalone: true}" />
+        <input          name="truck"    type="number" placeholder="Truck"   [(ngModel)]="truck"  [ngModelOptions]="{standalone: true}" />
+        <span class="parking-error" *ngIf="true">Sum ( Disabled + Truck ) must be less than - Total</span>
+        <button type="button" (click)="onCreateParking()">Generate</button>
+    </div>
+    <table>
+        <tr>
+            <td></td>
+            <td>Sedan places</td>
+            <td>Disabled places</td>
+            <td>Track places</td>
+        </tr>
+        <tr>
+            <td>Parking places</td>
+            <td>{{pSedan || 0}}</td>
+            <td>{{pDisabled || 0}}</td>
+            <td>{{pTruck || 0}}</td>
+        </tr>
+        <tr>
+            <td>PLaces left</td>
+            <td>{{aSedan || 0}}</td>
+            <td>{{aDisabled || 0}}</td>
+            <td>{{aTruck || 0}}</td>
+        </tr>
+    </table>
+</div>
+
+<parking></parking>
